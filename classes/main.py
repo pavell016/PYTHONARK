@@ -5,12 +5,24 @@ class car:
         self.__marca = marca
         self.__km = kilometratge
         print("car created: ",self.__marca, " / ", self.__km)
-        
-    def getMarca(self):
+
+    @property    
+    def Marca(self):
         return self.__marca
-    def getkm(self):
+    @Marca.setter
+    def Marca(self,marca):
+        self.__marca = marca    
+    @property
+    def km(self):
         return self.__km
+    @km.setter
+    def km(self,km):
+        self.__km = km   
 
 objCar = car("Volkswagen", 300)
-print(objCar.getkm())
-print(objCar.getMarca())
+print(objCar.km)
+print(objCar.Marca)
+objCar.Marca = "Ferrari"
+objCar.km = 50000
+print(objCar.km)
+print(objCar.Marca)
